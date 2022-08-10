@@ -7,8 +7,12 @@
   "env": {
     "node": true
   },
+  "rules": {
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"]
+  },
   "extends": [
-    "airbnb",
+    "airbnb-base",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier"
