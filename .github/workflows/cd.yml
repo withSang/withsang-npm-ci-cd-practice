@@ -18,6 +18,8 @@ jobs:
       - name: Get package's version from package.json
         id: package-version
         uses: martinbeentjes/npm-get-version-action@main
+      - name: Log two versions
+        run: echo ${{ github.ref_name }} && echo ${{ format('v{0}', steps.package-version.outputs.current-version) }}
       - name: Compare versions between those of GitHub Release Tag and package.json
         if: ${{ github.ref_name }} != ${{ format('v{0}', steps.package-version.outputs.current-version) }}
         uses: actions/github-script@v3
