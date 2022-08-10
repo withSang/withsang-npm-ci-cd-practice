@@ -1,6 +1,6 @@
 {
   "name": "withsang-npm-ci-cd-practice",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "ci &amp; cd practice",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
