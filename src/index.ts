@@ -9,15 +9,15 @@ enum Role {
 
 export default function getRole(nickname: string): Role {
   switch (nickname) {
-    case "platypus":
+    case 'platypus':
       return Role.President;
-    case "dora":
+    case 'dora':
       return Role.VicePresident;
-    case "night":
+    case 'night':
       return Role.ServerAdmin;
-    case "macintosh":
+    case 'macintosh':
       return Role.Accountant;
-    case "jeuk":
+    case 'jeuk':
       return Role.Member;
     default:
       return Role.Unknown;

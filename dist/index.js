@@ -9,6 +9,7 @@ var Role;
     Role[Role["Member"] = 4] = "Member";
     Role[Role["Unknown"] = 5] = "Unknown";
 })(Role || (Role = {}));
+let a = Role;
 function getRole(nickname) {
     switch (nickname) {
         case "platypus":

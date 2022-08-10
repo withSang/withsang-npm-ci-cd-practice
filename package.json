@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist/ && tsc -d -p tsconfig.build.json",
-    "test": "jest"
+    "test": "npx eslint src/**/*"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,14 @@
   },
   "homepage": "https://github.com/withSang/withsang-npm-ci-cd-practice#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   }
 }
