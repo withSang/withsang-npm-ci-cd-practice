@@ -6,16 +6,25 @@ on:
 
 jobs:
   publish:
-    name: Publish package to npm
-    runs-on: "ubuntu-latest"
+    name: Build and publish the package
+    runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v3
+      - name: Setup Ubuntu & Node environment
+        uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: "https://registry.npmjs.org"
-      - run: npm ci
-      - run: npm run build
-      - run: npm publish --access public
+          registry-url: 'https://registry.npmjs.org'
+      - name: Get package's version from package.json
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+      - name: Compare versions between those of GitHub Release Tag and package.json
+        run: echo ${{ github.ref_name }} && echo ${{ steps.package-version.outputs.current-version }}
+      - name: Install Node dependencies
+        run: npm ci
+      - name: Build node package
+        run: npm run build
+      - name: Publish the package to NPM publicly
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
