@@ -18,10 +18,11 @@ jobs:
       - name: Get package's version from package.json
         id: package-version
         uses: martinbeentjes/npm-get-version-action@main
-      - name: Log two versions
-        run: echo ${{ format('|{0}|v{1}|', github.ref_name, steps.package-version.outputs.current-version) }}
+      # - name: Log two versions
+      #   run: |
+      #     echo ${{ format('|{0}|v{1}|', github.ref_name, steps.package-version.outputs.current-version) }}
       - name: Compare versions between those of GitHub Release Tag and package.json
-        if: ${{ github.ref_name }} != ${{ format('v{0}', steps.package-version.outputs.current-version) }}
+        if: ${{ format('v{0}', steps.package-version.outputs.current-version) }} != ${{ format('v{0}', steps.package-version.outputs.current-version) }}
         uses: actions/github-script@v3
         with:
           script: |
