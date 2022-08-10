@@ -1,0 +1,24 @@
+{
+  "name": "withsang-npm-ci-cd-practice",
+  "version": "0.0.1",
+  "description": "ci &amp; cd practice",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist/ && tsc -d -p tsconfig.build.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/withSang/withsang-npm-ci-cd-practice.git"
+  },
+  "author": "Sang Jeong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/withSang/withsang-npm-ci-cd-practice/issues"
+  },
+  "homepage": "https://github.com/withSang/withsang-npm-ci-cd-practice#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
